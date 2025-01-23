@@ -1,7 +1,9 @@
-import {Avatar, Button, Stack, Typography} from "@mui/material";
+import {Avatar, Button, Stack, Typography, useMediaQuery} from "@mui/material";
 
 const ProfileBar = () =>{
-return(
+    const _700 = useMediaQuery("(min-width:700px)");
+
+    return(
     <>
     <Stack flexDirection={"row"}
            justifyContent={"space-between"}
@@ -9,7 +11,7 @@ return(
            py={2}
            mx={'auto'}
            boxShadow={'5px 5px 5px gray'}
-           width={'100%'}
+           width={_700 ? '80%':'90%'}
            borderRadius={"15px"}
     sx={{
         ":hover":{
@@ -20,13 +22,13 @@ return(
     <Stack flexDirection={"row"} gap={2}>
         <Avatar src="" alt="" />
         <Stack flexDirection={"column"}>
-            <Typography variant="h6" fontWeight={"bold"} fontSize={"1rem"}>
+            <Typography variant="h6" fontWeight={"bold"} fontSize={_700?"1rem":"0.9rem"}>
                 Rishwa@344
             </Typography>
-            <Typography variant="caption" fontSize={"1.1rem"} color={"gray"}>
+            <Typography variant="caption" fontSize={_700?"1.1rem":"0.75rem"} color={"gray"}>
                 This is bio
             </Typography>
-            <Typography variant="caption" fontSize={"1rem"}>
+            <Typography variant="caption" fontSize={_700?"1rem":"0.9rem"}>
                 30 followes
             </Typography>
         </Stack>
